@@ -8,6 +8,9 @@ fi
 
 set -euo pipefail
 
+# Ensure gum input has a fallback width to prevent Charm Bubbles v2 placeholder panic
+export GUM_INPUT_WIDTH="${GUM_INPUT_WIDTH:-80}"
+
 app_name="YT-DLP Menu"
 default_dir="$HOME/Downloads/yt-dlp"
 state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/yt-dlp-menu"
